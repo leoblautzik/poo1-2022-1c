@@ -1,13 +1,15 @@
-package cuentasBancarias;
+package cuantasBancariasHerencia;
 
-public class CajaDeAhorro {
+public abstract class Cuenta {
 
 	private double saldo = 0;
 	private String titular;
 
-	public CajaDeAhorro(String titular) {
+	public Cuenta(String titular) {
 		this.setTitular(titular);
 	}
+
+	protected abstract boolean haySaldoSuficiente(double monto);
 
 	public double getSaldo() {
 		return saldo;
@@ -22,7 +24,6 @@ public class CajaDeAhorro {
 			setSaldo(this.getSaldo() + monto);
 	}
 
-	
 	public double extraer(double monto) {
 		if (esMontoValido(monto) && haySaldoSuficiente(monto)) {
 			this.saldo -= monto;
@@ -31,24 +32,19 @@ public class CajaDeAhorro {
 			return 0;
 
 	}
-	
-	
-	public void transferir(CajaDeAhorro cuentaDestino, double monto) {
-		if (esMontoValido(monto) && haySaldoSuficiente(monto)) 
+
+	public void transferir(Cuenta cuentaDestino, double monto) {
+		if (esMontoValido(monto) && this.haySaldoSuficiente(monto))
 			cuentaDestino.depositar(this.extraer(monto));
 	}
 
-	private void setSaldo(double saldo) {
+	protected void setSaldo(double saldo) {
 		if (esMontoValido(saldo))
 			this.saldo = saldo;
 	}
 
-	private boolean esMontoValido(double monto) {
+	protected boolean esMontoValido(double monto) {
 		return monto > 0;
-	}
-
-	private boolean haySaldoSuficiente(double monto) {
-		return this.getSaldo() >= monto;
 	}
 
 	private void setTitular(String titular) {
