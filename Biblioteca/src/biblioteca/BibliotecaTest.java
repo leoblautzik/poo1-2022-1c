@@ -29,7 +29,7 @@ public class BibliotecaTest {
 		bibi.agregar("Soy Java", "Pepe Java", 1200);
 		assertFalse(bibi.agregar("Otro Libro", "Autor", 2400));
 		Libro esperado = new Libro("Soy Java", "Pepe Java", 1200);
-		assertEquals(esperado.getTitulo(), bibi.libroEnLaPosicion(1));
+		assertEquals(esperado.getTitulo(), bibi.libroEnLaPosicion(1F));
 
 	}
 
