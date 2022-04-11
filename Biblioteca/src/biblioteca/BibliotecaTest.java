@@ -23,6 +23,17 @@ public class BibliotecaTest {
 	}
 
 	@Test
+	public void noHayLugarTest() {
+		Biblioteca bibi = new Biblioteca(1);
+		assertEquals(0, bibi.cuantosLibros());
+		bibi.agregar("Soy Java", "Pepe Java", 1200);
+		assertFalse(bibi.agregar("Otro Libro", "Autor", 2400));
+		Libro esperado = new Libro("Soy Java", "Pepe Java", 1200);
+		assertEquals(esperado.getTitulo(), bibi.libroEnLaPosicion(1));
+
+	}
+
+	@Test
 	public void consultarLibroEnLaPrimeraPosicionTest() {
 		Biblioteca bibi = new Biblioteca(100);
 		assertEquals(0, bibi.cuantosLibros());
