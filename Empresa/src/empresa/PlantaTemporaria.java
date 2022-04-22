@@ -10,7 +10,7 @@ public class PlantaTemporaria extends Empleado {
 
 	
 	@Override
-	public double obtenerSueldo() {
+	public Double obtenerSueldo() {
 		return super.horasTrabajadas * VALOR_HORA 
 				+ super.obtenerSalarioFamiliar();
 	}

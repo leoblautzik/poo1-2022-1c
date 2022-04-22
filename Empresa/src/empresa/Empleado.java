@@ -1,6 +1,6 @@
 package empresa;
 
-public abstract class Empleado {
+public abstract class Empleado implements Comparable<Empleado>{
 	private boolean estaCasado;
 	private int hijos;
 	protected int horasTrabajadas;
@@ -18,9 +18,12 @@ public abstract class Empleado {
 		return sf;		
 	}
 	
-	public abstract double obtenerSueldo();
+	public abstract Double obtenerSueldo();
 	
-	
+	public int compareTo(Empleado e) {
+		return this.obtenerSueldo().compareTo(e.obtenerSueldo());
+		
+	}
 	
 	
 

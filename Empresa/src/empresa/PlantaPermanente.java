@@ -13,7 +13,7 @@ public class PlantaPermanente extends Empleado {
 
 	
 	@Override
-	public double obtenerSueldo() {
+	public Double obtenerSueldo() {
 		return super.horasTrabajadas * PlantaPermanente.VALOR_HORA 
 				+ this.antiguedad * PlantaPermanente.VALOR_ANIO_ANTIGUEDAD 
 				+ super.obtenerSalarioFamiliar();

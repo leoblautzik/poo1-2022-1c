@@ -11,7 +11,7 @@ public class Gerente extends PlantaPermanente {
 	}
 	
 	@Override
-	public double obtenerSueldo() {
+	public Double obtenerSueldo() {
 		return super.horasTrabajadas * Gerente.VALOR_HORA 
 				+ super.antiguedad * Gerente.VALOR_ANIO_ANTIGUEDAD 
 				+ super.obtenerSalarioFamiliar();
