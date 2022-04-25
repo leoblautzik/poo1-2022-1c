@@ -23,7 +23,7 @@ public class ObraEdificio {
 	}
 	
 	public Boolean terminado() {
-		return this.supCimentada == this.supAcimentar;
+		return this.supCimentada.equals(this.supAcimentar);
 	}
 
 }
