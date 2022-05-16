@@ -3,8 +3,11 @@ package colecciones;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 import java.util.Stack;
 
 public class Listas {
@@ -44,6 +47,20 @@ public class Listas {
 		}
 		return aux;
 	}
+	
+	public static List<Integer> eliminarRepetidosSet(List<Integer> l) {
+		List<Integer> aux = new ArrayList<Integer>();
+		Set<Integer> setAux = new HashSet<Integer>();
+		
+		for (Integer cadaUno : l) {
+			setAux.add(cadaUno);
+		}
+		
+		for(Integer cs : setAux)
+			aux.add(cs);
+		
+		return aux;
+	}
 
 	/*
 	 * Escriba un método que reciba una lista de enteros y la devuelva invertida.
@@ -70,13 +87,28 @@ public class Listas {
 	 * resultante de sumarlos también sea un elemento de la lista.
 	 */
 	public static boolean contieneDosSumados(List<Integer> lista) {
-		for(int i = 0; i < lista.size()-1; i++) {
-			for(int j = i+1; j < lista.size(); j++) {
-				if(lista.contains(lista.get(i) + lista.get(j))) { 
+		
+		Iterator<Integer> itrI = lista.iterator();
+		Iterator<Integer> itrJ; 
+		int i = 0;
+		while(itrI.hasNext()) {
+			Integer auxI= itrI.next();
+			i++;
+			itrJ = lista.listIterator(i);
+			while(itrJ.hasNext()) {
+				if(lista.contains(auxI + itrJ.next()))
 					return true;
-				}
 			}
 		}
+			
+		
+//		for(int i = 0; i < lista.size()-1; i++) {
+//			for(int j = i+1; j < lista.size(); j++) {
+//				if(lista.contains(lista.get(i) + lista.get(j))) { 
+//					return true;
+//				}
+//			}
+//		}
 		return false;
 	}
 	
@@ -91,6 +123,12 @@ public class Listas {
 	 * con L1 y L3 debe devolver false.
 	 * 
 	 */
+	
+	public static boolean esSublista(List<Integer> l1, List<Integer> l2) {
+		
+		return false;
+	}
+	
 
 	public static void main(String[] args) {
 		LinkedList<Integer> a = new LinkedList<Integer>();
@@ -121,7 +159,7 @@ public class Listas {
 		conRepetidos.addAll(Arrays.asList(v));
 
 		System.out.println("Con Repetidos " + conRepetidos);
-		System.out.println("Sin Repetidos " + eliminarRepetidos(conRepetidos));
+		System.out.println("Sin Repetidos " + eliminarRepetidosSet(conRepetidos));
 
 		System.out.println(invertirLista(eliminarRepetidos(conRepetidos)));
 		
@@ -131,7 +169,7 @@ public class Listas {
 		sumados.add(5);
 		sumados.add(7);
 		sumados.add(9);
-		sumados.add(17);
+		sumados.add(16);
 		
 		System.out.println(contieneDosSumados(sumados));
 		
