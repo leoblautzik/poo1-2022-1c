@@ -16,7 +16,7 @@ public class Stock {
 			if (stockFinal.containsKey(key)) {
 				value = stockFinal.get(key);
 				value += cadaProd.getStocProducto();
-				stockFinal.put(key, value+=cadaProd.getStocProducto());
+				stockFinal.put(key, value += cadaProd.getStocProducto());
 			} else {
 				stockFinal.put(key, cadaProd.getStocProducto());
 			}
