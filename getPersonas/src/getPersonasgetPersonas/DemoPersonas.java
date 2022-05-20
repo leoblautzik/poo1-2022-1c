@@ -19,6 +19,9 @@ public class DemoPersonas {
 		personas.add(ana);
 		personas.add(luis);
 		personas.add(laura);
+		
+		System.out.println("?" + personas.size());
+		
 
 		listarPersonas(personas);
 
@@ -39,9 +42,7 @@ public class DemoPersonas {
 		//Listar personas ordenedas por edad
 		Collections.sort(personas, Collections.reverseOrder(new ComparadorPorEdad()));
 		listarPersonas(personas);
-		
-		
-
+	
 	}
 
 	private static void listarPersonas(ArrayList<Persona> personas) {

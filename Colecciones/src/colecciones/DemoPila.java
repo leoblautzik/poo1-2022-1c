@@ -2,7 +2,7 @@ package colecciones;
 
 import java.util.Stack;
 
-public class PilaTest {
+public class DemoPila {
 
 	public static void main(String[] args) {
 		

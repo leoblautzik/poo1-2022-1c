@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 public class Playlist {
 
+	//private ArrayList<Cancion> canciones;
 	private Cancion[] canciones;
 	private int cantCanciones = 0;
 	private Cancion masLarga = null;

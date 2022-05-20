@@ -1,10 +1,13 @@
-package playlista;
+package primerParcialConList;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+
+import java.util.ArrayList;
 
 import org.junit.Test;
 
-public class SpotofoTest {
+public class ParcialTest {
 
 	@Test
 	public void nuevaCancionTest() {
@@ -26,6 +29,7 @@ public class SpotofoTest {
 		p1.agregarCancion("Bruno Mars", "Put on a smile", 255);
 		p1.agregarCancion("Maluma", "Aloha", 241);
 		Cancion esperado = new Cancion("Maluma", "Hawai", 190);
+		System.out.println(p1.cancionEnLaPosicion(1));
 		Cancion obtenido = p1.cancionEnLaPosicion(1);
 		assertEquals(esperado, obtenido);
 	}
@@ -35,10 +39,12 @@ public class SpotofoTest {
 		p1.agregarCancion("Maluma", "Aloha", 241);
 		p1.agregarCancion("Maluma", "Hawai", 190);
 		p1.agregarCancion("Bruno Mars", "Put on a smile", 255);
-		Cancion [] esperado = {new Cancion("Maluma", "Hawai", 190), 
-						       new Cancion("Maluma", "Aloha", 241)
-						      };
-		assertArrayEquals(esperado, p1.cancionesDelInterprete("Maluma"));
+		
+		ArrayList<Cancion> esperado = new ArrayList<Cancion>();
+		esperado.add(new Cancion("Maluma", "Aloha", 241));
+		esperado.add(new Cancion("Maluma", "Hawai", 190));
+				
+		assertEquals(esperado, p1.cancionesDelInterprete("Maluma"));
 	}
 	@Test
 	public void cancionMasLargaTest() {
@@ -50,13 +56,13 @@ public class SpotofoTest {
 		
 	}
 	
-	@Test(expected=Error.class)
-	public void agregarCancionDeMasTest() {
-		Playlist p1 = new Playlist(2);
-		p1.agregarCancion("Maluma", "Aloha", 241);
-		p1.agregarCancion("Maluma", "Hawai", 190);
-		p1.agregarCancion("Bruno Mars", "Put on a smile", 255);
-	}
-	
+//	@Test(expected=Error.class)
+//	public void agregarCancionDeMasTest() {
+//		Playlist p1 = new Playlist(2);
+//		p1.agregarCancion("Maluma", "Aloha", 241);
+//		p1.agregarCancion("Maluma", "Hawai", 190);
+//		p1.agregarCancion("Bruno Mars", "Put on a smile", 255);
+//	}
+//	
 
 }
