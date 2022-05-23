@@ -15,5 +15,10 @@ public class Caballo implements Bebedor {
 	public void incrementarAtaque() {
 		this.cantAtaques ++;
 	}
-
+	
+	public boolean isRebelde() {
+		return this.rebelde;
+	}
+	
+	
 }
