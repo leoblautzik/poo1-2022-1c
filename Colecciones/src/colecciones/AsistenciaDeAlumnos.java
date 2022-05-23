@@ -18,7 +18,8 @@ public class AsistenciaDeAlumnos {
 			List<String> listaAlumnos = cadaDia.getValue();
 			for (String cadaAlumno : listaAlumnos) {
 				if (asisenciaXalumno.containsKey(cadaAlumno)) {
-					asisenciaXalumno.get(cadaAlumno).add(dia);
+					List<String> listaDiasDelAlumno = asisenciaXalumno.get(cadaAlumno);
+					listaDiasDelAlumno.add(dia);
 				} else {
 					List<String> listaDias = new ArrayList<String>();
 					listaDias.add(dia);
