@@ -14,6 +14,7 @@ public class DemoGeometria {
 		Figura unTriangulo = new Triangulo(p1, p2, p3);
 		Figura unCirculo = new Circulo(new Punto(1, 1), 4);
 		Figura unCuadrado = new Cuadrado(new Punto(3, -3), 2);
+		Elipse unaElipse = new Elipse(p1, 2, 0.5);
 
 		Figura figuras[] = new Figura[3];
 		figuras[0] = unTriangulo;

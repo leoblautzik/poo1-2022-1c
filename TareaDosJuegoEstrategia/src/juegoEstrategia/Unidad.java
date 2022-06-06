@@ -2,9 +2,19 @@ package juegoEstrategia;
 
 public abstract class Unidad {
 	
-	private int salud;
+	private Double salud;
 	private Punto posicion;
 	
+	public Unidad(double salud, Punto posicion) {
+		this.salud = salud;
+		this.posicion = posicion;
+		
+	}
+	
+	protected Punto getPosicion() {
+		return posicion;
+	}
+
 	public abstract void atacar(Unidad u);
 	
 	public abstract boolean puedeAtacar(Unidad u);
@@ -17,24 +27,25 @@ public abstract class Unidad {
 		return this.posicion.distancia(u.posicion);
 	}
 	
-	public void recibirDanio(int danio) {
+	public void recibirDanio(double danio) {
 		this.salud -= danio;
 	}
 	
-
-	public Unidad(int salud, Punto posicion) {
-		this.salud = salud;
-		this.posicion = posicion;
-		
-	}
-
-	public int getSalud() {
+	public Double getSalud() {
 		return salud;
 	}
 
+//	protected void setSalud(double saludAtacada) {
+//		this.salud = saludAtacada;
+//	}
+
+	@Override
+	public String toString() {
+		return "Unidad [salud=" + salud + ", posicion=" + posicion + ", getClass()=" + getClass() + ", hashCode()="
+				+ hashCode() +"]";
+	}
 	
-	
-	
-	
+
+		
 
 }

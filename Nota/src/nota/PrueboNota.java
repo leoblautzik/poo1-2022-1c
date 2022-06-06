@@ -4,7 +4,7 @@ public class PrueboNota {
 
 	public static void main(String[] args) {
 		
-		Nota notita = new Nota(4);
+		Nota notita = new Nota(-4);
 		System.out.println(notita.obtenerValor());
 		System.out.println(notita.aprobado());
 		System.out.println(notita.desaprobado());

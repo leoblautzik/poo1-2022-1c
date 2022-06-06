@@ -2,7 +2,7 @@ package nota;
 
 class Nota {
 
-	private int valor;
+	private Integer valor;
 
 	/*
 	 * pre : valorInicial está comprendido entre 0 y 10. post: inicializa la Nota
@@ -10,13 +10,21 @@ class Nota {
 	 */
 
 	public Nota(int valorInicial) {
-
-		this.valor = valorInicial;
+		try {
+			if (valorInicial < 0) {
+				throw new NotaInvalidaException("Nota inválida");
+			}
+			else
+				this.valor = valorInicial;
+		}
+		catch (NotaInvalidaException nie){
+			System.err.println(nie.getMessage());
+		}
+		
 	}
 
 	public Nota() {
-
-		this(0);
+-
 
 	}
 

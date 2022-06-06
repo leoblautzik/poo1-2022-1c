@@ -24,6 +24,13 @@ public class Soldado extends Unidad implements Bebedor{
 	}
 
 	@Override
+	public String toString() {
+		return "Soldado [energia=" + energia + ", getPosicion()=" + getPosicion() + ", estaMuerta()=" + estaMuerta()
+				+ ", getSalud()=" + getSalud() + ", toString()=" + super.toString() + ", getClass()=" + getClass()
+				+ ", hashCode()=" + hashCode() + "]";
+	}
+
+	@Override
 	public boolean puedeAtacar(Unidad u) {
 		return (!u.estaMuerta() && u.distancia(u) == 0 && this.energia >= 10);
 	}
