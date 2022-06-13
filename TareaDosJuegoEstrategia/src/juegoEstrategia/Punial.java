@@ -17,6 +17,11 @@ public class Punial extends Item {
 	}
 	
 	@Override
+	public void recibirDanio(double danio) {
+		this.unidad.setSalud(this.unidad.getSalud()- danio - 3);
+	}
+	
+	@Override
 	public void infringirDanio(Unidad u) {
 		u.recibirDanio(this.getDanio() + 3);
 	}

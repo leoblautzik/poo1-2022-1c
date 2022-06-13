@@ -32,6 +32,10 @@ public abstract class Unidad {
 		this.salud -= danio;
 	}
 	
+	protected void setSalud(Double salud) {
+		this.salud = salud;
+	}
+
 	public abstract Integer getDanio(); 
 	
 	public Double getSalud() {
