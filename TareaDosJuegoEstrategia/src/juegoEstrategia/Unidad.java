@@ -5,6 +5,7 @@ public abstract class Unidad {
 	private Double salud;
 	private Punto posicion;
 	
+	
 	public Unidad(double salud, Punto posicion) {
 		this.salud = salud;
 		this.posicion = posicion;
@@ -31,9 +32,13 @@ public abstract class Unidad {
 		this.salud -= danio;
 	}
 	
+	public abstract Integer getDanio(); 
+	
 	public Double getSalud() {
 		return salud;
 	}
+	
+	
 
 //	protected void setSalud(double saludAtacada) {
 //		this.salud = saludAtacada;

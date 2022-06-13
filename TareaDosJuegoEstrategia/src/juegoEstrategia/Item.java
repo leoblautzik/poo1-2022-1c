@@ -9,4 +9,9 @@ public abstract class Item extends Unidad {
 		this.unidad = unidad;
 	}
 
+	public void infringirDanio(Unidad u) {
+		u.recibirDanio(this.getDanio());
+		
+	}
+
 }

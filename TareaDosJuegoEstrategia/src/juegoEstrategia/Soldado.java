@@ -3,9 +3,13 @@ package juegoEstrategia;
 public class Soldado extends Unidad implements Bebedor{
 
 	private int energia;
-	private static final int DANIO = 10;
+	private final int DANIO = 10;
 
 	
+	public Integer getDanio() {
+		return DANIO;
+	}
+
 	public Soldado(Punto posicion) {
 		super(200, posicion);
 		this.energia = 100;
@@ -32,7 +36,7 @@ public class Soldado extends Unidad implements Bebedor{
 
 	@Override
 	public boolean puedeAtacar(Unidad u) {
-		return (!u.estaMuerta() && u.distancia(u) == 0 && this.energia >= 10);
+		return (!u.estaMuerta() && this.distancia(u) == 0 && this.energia >= 10);
 	}
 
 	public int getEnergia() {
